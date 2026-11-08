@@ -497,11 +497,11 @@ This scenario proves the operator-first rolling path, adjacent RC admission,
 non-empty data continuity, retained PVCs, and final Raft and audit health for
 the pinned rc.2 and target revisions. It does not write during mixed Ledger
 versions, exhaustively compare every persisted record type, exercise snapshot
-installation, backup/restore, rollback, or the dormant stopped-upgrade path.
+installation, backup/restore, rollback, or the separate rc.3-to-rc.4 stopped-upgrade path.
 The pinned binary-level rc.1 test and relevant model, restore and migration
 suites remain separate gates.
 
-The same harness has a separate, future `rc3-to-rc4` transition:
+The same harness has a separate `rc3-to-rc4` stopped transition:
 
 ```bash
 UPGRADE_TRANSITION=rc3-to-rc4 RELEASE_BRANCH=release/v3.0 just test-release-operator-upgrade
